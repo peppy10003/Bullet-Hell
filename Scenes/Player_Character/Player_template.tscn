@@ -3,11 +3,12 @@
 [ext_resource type="Script" path="res://Scripts/Player_Character/Player_template.gd" id="1_nvpn4"]
 [ext_resource type="Texture2D" uid="uid://bmh3ktob0kpsd" path="res://Assets/Screenshot_20231221_141304.png" id="2_say2r"]
 [ext_resource type="Texture2D" uid="uid://s2bda4bmloyh" path="res://Assets/hitbox.png" id="3_1xg0o"]
-[ext_resource type="Script" path="res://Scenes/Player_Character/Hitbox_Sprite.gd" id="4_ylofi"]
+[ext_resource type="Script" path="res://Scripts/Player_Character/Hitbox_Sprite.gd" id="4_t5t4e"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_j456j"]
 
 [node name="CharacterBody2D" type="CharacterBody2D"]
+motion_mode = 1
 script = ExtResource("1_nvpn4")
 
 [node name="Player_Sprite" type="Sprite2D" parent="."]
@@ -16,7 +17,7 @@ texture = ExtResource("2_say2r")
 [node name="Hitbox_Sprite" type="Sprite2D" parent="."]
 scale = Vector2(0.05, 0.05)
 texture = ExtResource("3_1xg0o")
-script = ExtResource("4_ylofi")
+script = ExtResource("4_t5t4e")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_j456j")
