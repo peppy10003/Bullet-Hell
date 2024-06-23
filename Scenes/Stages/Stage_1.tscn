@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://2qi4w8alb87b"]
+
+[ext_resource type="Texture2D" uid="uid://bmh3ktob0kpsd" path="res://Assets/Screenshot_20231221_141304.png" id="1_7nmg6"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_4sueu"]
+
+[node name="CharacterBody2D" type="CharacterBody2D"]
+position = Vector2(54, 34)
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_7nmg6")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_4sueu")
