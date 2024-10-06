@@ -1,6 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://k6wayvopjc6u"]
+[gd_scene load_steps=5 format=3 uid="uid://k6wayvopjc6u"]
 
+[ext_resource type="Script" path="res://Scenes/Main_Menu/Main_Menu.gd" id="1_33m1r"]
 [ext_resource type="Texture2D" uid="uid://bmrlfrh1yhe72" path="res://Assets/covid-9.png" id="1_k2vf0"]
+[ext_resource type="FontFile" uid="uid://3h6l6qm8sqtu" path="res://Assets/Comic Sans MS.ttf" id="2_bm7bx"]
 
 [sub_resource type="SystemFont" id="SystemFont_dq02x"]
 
@@ -11,6 +13,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_33m1r")
 
 [node name="TextureRect" type="TextureRect" parent="."]
 layout_mode = 1
@@ -21,7 +24,7 @@ grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("1_k2vf0")
 
-[node name="MarginContainer" type="MarginContainer" parent="."]
+[node name="Main_Menu" type="MarginContainer" parent="."]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -33,19 +36,137 @@ theme_override_constants/margin_top = 15
 theme_override_constants/margin_right = 15
 theme_override_constants/margin_bottom = 15
 
-[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="Main_Menu"]
 layout_mode = 2
 theme_override_constants/separation = 60
 
-[node name="Separator" type="Control" parent="MarginContainer/VBoxContainer"]
+[node name="Control" type="Control" parent="Main_Menu/VBoxContainer"]
 layout_mode = 2
 
-[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/Separator"]
-layout_mode = 0
-offset_left = 663.0
-offset_top = 42.0
-offset_right = 1072.0
-offset_bottom = 126.0
+[node name="Label" type="Label" parent="Main_Menu/VBoxContainer/Control"]
+layout_mode = 2
+offset_left = 706.0
+offset_top = 24.0
+offset_right = 1115.0
+offset_bottom = 108.0
 theme_override_fonts/font = SubResource("SystemFont_dq02x")
 theme_override_font_sizes/font_size = 61
 text = "Joe Bullet Hell"
+
+[node name="Start_Button" type="Button" parent="Main_Menu/VBoxContainer/Control"]
+layout_mode = 2
+offset_left = 10.0
+offset_top = 130.0
+offset_right = 96.0003
+offset_bottom = 181.0
+focus_neighbor_top = NodePath("../Exit_Button")
+focus_neighbor_bottom = NodePath("../Options_Button")
+theme_override_fonts/font = ExtResource("2_bm7bx")
+theme_override_font_sizes/font_size = 30
+text = "Start"
+alignment = 0
+icon_alignment = 1
+
+[node name="Options_Button" type="Button" parent="Main_Menu/VBoxContainer/Control"]
+layout_mode = 2
+offset_left = 10.0
+offset_top = 200.0
+offset_right = 127.0
+offset_bottom = 251.0
+focus_neighbor_top = NodePath("../Start_Button")
+focus_neighbor_bottom = NodePath("../Records_Button")
+theme_override_fonts/font = ExtResource("2_bm7bx")
+theme_override_font_sizes/font_size = 30
+text = "Options"
+alignment = 0
+icon_alignment = 1
+
+[node name="Records_Button" type="Button" parent="Main_Menu/VBoxContainer/Control"]
+layout_mode = 2
+offset_left = 10.0
+offset_top = 270.0
+offset_right = 131.0
+offset_bottom = 321.0
+theme_override_fonts/font = ExtResource("2_bm7bx")
+theme_override_font_sizes/font_size = 30
+text = "Records
+"
+alignment = 0
+icon_alignment = 1
+
+[node name="Practice_Button" type="Button" parent="Main_Menu/VBoxContainer/Control"]
+layout_mode = 2
+offset_left = 10.0
+offset_top = 340.0
+offset_right = 131.0
+offset_bottom = 391.0
+focus_neighbor_top = NodePath("../Records_Button")
+focus_neighbor_bottom = NodePath("../Exit_Button")
+theme_override_fonts/font = ExtResource("2_bm7bx")
+theme_override_font_sizes/font_size = 30
+text = "Practice"
+alignment = 0
+icon_alignment = 1
+
+[node name="Exit_Button" type="Button" parent="Main_Menu/VBoxContainer/Control"]
+layout_mode = 2
+offset_left = 10.0
+offset_top = 410.0
+offset_right = 96.0001
+offset_bottom = 461.0
+focus_neighbor_top = NodePath("../Practice_Button")
+focus_neighbor_bottom = NodePath("../Start_Button")
+theme_override_fonts/font = ExtResource("2_bm7bx")
+theme_override_font_sizes/font_size = 30
+text = "Exit"
+alignment = 0
+icon_alignment = 1
+
+[node name="Start_Menu" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 1152.0
+offset_right = 1152.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 15
+theme_override_constants/margin_top = 15
+theme_override_constants/margin_right = 15
+theme_override_constants/margin_bottom = 15
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Start_Menu"]
+layout_mode = 2
+theme_override_constants/separation = 60
+
+[node name="Control" type="Control" parent="Start_Menu/VBoxContainer"]
+layout_mode = 2
+
+[node name="Player 1" type="Button" parent="Start_Menu/VBoxContainer/Control"]
+offset_left = 18.0
+offset_top = 137.0
+offset_right = 104.0
+offset_bottom = 188.0
+theme_override_fonts/font = ExtResource("2_bm7bx")
+theme_override_font_sizes/font_size = 30
+text = "Player 1"
+alignment = 0
+icon_alignment = 1
+
+[node name="Start_back_Button" type="Button" parent="Start_Menu/VBoxContainer/Control"]
+layout_mode = 0
+offset_left = 10.0
+offset_top = 410.0
+offset_right = 96.0001
+offset_bottom = 461.0
+theme_override_fonts/font = ExtResource("2_bm7bx")
+theme_override_font_sizes/font_size = 30
+text = "Exit"
+alignment = 0
+icon_alignment = 1
+
+[connection signal="pressed" from="Main_Menu/VBoxContainer/Control/Start_Button" to="." method="_on_start_button_pressed"]
+[connection signal="pressed" from="Start_Menu/VBoxContainer/Control/Player 1" to="." method="_on_player_1_pressed"]
+[connection signal="pressed" from="Start_Menu/VBoxContainer/Control/Player 1" to="." method="_on_start_back_button_pressed"]
+[connection signal="pressed" from="Start_Menu/VBoxContainer/Control/Start_back_Button" to="." method="_on_start_back_button_pressed"]

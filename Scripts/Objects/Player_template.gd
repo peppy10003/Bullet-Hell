@@ -8,8 +8,7 @@ func _physics_process(delta):
 	input_vector.x = Input.get_action_strength("ui_right") - Input.get_action_strength("ui_left")
 	input_vector.y = Input.get_action_strength("ui_down") - Input.get_action_strength("ui_up")
 	input_vector = input_vector.normalized()
-	if Input.get_action_strength("Focus") != 0:
-		velocity = (input_vector * Focus_Speed)
-	else:
-		velocity = (input_vector * Base_Speed)
+	
+	velocity = (input_vector * ((Focus_Speed * int(Input.get_action_strength("Focus"))) + (Base_Speed * int(!Input.get_action_strength("Focus")))))
 	move_and_collide(velocity)
+	

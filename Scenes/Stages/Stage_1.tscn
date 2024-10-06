@@ -1,9 +1,8 @@
-[gd_scene load_steps=2 format=3 uid="uid://2qi4w8alb87b"]
+[gd_scene load_steps=2 format=3 uid="uid://47gw232juwqs"]
 
-[ext_resource type="PackedScene" uid="uid://c5vx1gplm46t0" path="res://Scenes/Player_Character/Player_template.tscn" id="1_8anjy"]
+[ext_resource type="PackedScene" uid="uid://c5vx1gplm46t0" path="res://Scenes/Objects/Player_Template.tscn" id="1_8anjy"]
 
-[node name="CharacterBody2D" type="CharacterBody2D"]
-up_direction = Vector2(0, 1)
+[node name="Stage1" type="Node2D"]
 
 [node name="CharacterBody2D" parent="." instance=ExtResource("1_8anjy")]
 position = Vector2(516, 348)

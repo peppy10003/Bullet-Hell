@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://dvd7jhkyugiqb"]
+
+[ext_resource type="Texture2D" uid="uid://s2bda4bmloyh" path="res://Assets/hitbox.png" id="1_830sp"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_uylne"]
+
+[node name="EnemyBulletTemplate" type="CharacterBody2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("1_830sp")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+scale = Vector2(1.675, 1.675)
+shape = SubResource("CircleShape2D_uylne")
